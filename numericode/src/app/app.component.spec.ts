@@ -1,18 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { DecoderPipe } from './decoder.pipe';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        FormsModule, RouterTestingModule,
+        ReactiveFormsModule,HttpClientModule, RouterTestingModule,
       ],
       declarations: [
         AppComponent,
-        DecoderPipe
       ],
     }).compileComponents();
   }));

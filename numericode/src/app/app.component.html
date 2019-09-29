@@ -19,13 +19,20 @@
 
         <div class="card">
           <div class="card-header">
-              <label for="message">Secret code</label>
-              <input type="text" class="form-control" id="message" [(ngModel)]="message" placeholder="ex. 8 5 12 12 15">
+
+              <form [formGroup]="messageForm" (ngSubmit)="onSubmit(messageForm.value)">
+                <div class="form-group">
+                    <label for="message">Secret code</label>
+                    <input type="text" class="form-control" id="message" placeholder="ex. 8 5 12 12 15" formControlName="message">
+                </div>
+                <button class="btn btn-primary" type="submit">Decrypt</button>
+              </form>
+
           </div>
           <div class="card-body">
               <h3 class="display-6">Message</h3>
               <hr class="my-4">
-              <p class="lead" *ngIf="message">{{message | decoder }}</p>
+              <p class="lead" *ngIf="message">{{ message }}</p>
           </div>
         </div>
 
